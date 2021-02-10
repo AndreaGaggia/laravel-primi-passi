@@ -14,9 +14,23 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    return view('index');
+    $noposts = [
+        [
+            'title' => 'NoPost #1',
+            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum asperiores possimus recusandae adipisci dicta, facere voluptas! Unde esse ea possimus aperiam dolore consequatur, quae dolorum, facere laboriosam inventore explicabo error!',
+        ],
+        [
+            'title' => 'NoPost #2',
+            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum asperiores possimus recusandae adipisci dicta, facere voluptas! Unde esse ea possimus aperiam dolore consequatur, quae dolorum, facere laboriosam inventore explicabo error!',
+        ],
+        [
+            'title' => 'NoPost #3',
+            'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum asperiores possimus recusandae adipisci dicta, facere voluptas! Unde esse ea possimus aperiam dolore consequatur, quae dolorum, facere laboriosam inventore explicabo error!',
+        ],
+    ];
+    return view('index', compact('noposts'));
 });
 
-Route::get('about-me', function () {
+Route::get('about-noblog', function () {
     return view('about');
 });
